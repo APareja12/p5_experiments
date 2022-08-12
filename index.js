@@ -31,16 +31,15 @@ canvas.addEventListener('click', function(e){
 });
 
 const animate = () => {
-    atoms.forEach(atom => {
+    atoms.forEach((atom, index) => {
     // ctx.fillStyle = 'white'
         atom.draw();
-        atom.update();
-        // atom.updateSpeed(); 
-        // atom.updateSize(); 
+        atom.updateSpeed(); 
+        atom.updateSize(); 
 
-        // if (atom.radius < 0.3){
-        //     atoms.splice(index, 1);
-        
+        if (atom.radius < 0.3){
+            atoms.splice(index, 1);
+        }
 });
     // ctx.save();
     // ctx.fillStyle = 'rgba(255,255,255,0.3';
@@ -61,16 +60,16 @@ class Atom {
         this.speedX = Math.random() * 4 - 2;
         this.speedY = Math.random() * 4 - 2;
     }
-    update(){
+    updateSpeed(){
         this.x += this.speedX;
         this.y += this.speedY;
     }
 
-    // updateSize(){
-    //     this.radius -= 0.1;
-    //     // this.x += this.speedX;
-    //     // this.y += this.speedY;
-    // }
+    updateSize(){
+        this.radius -= 0.1;
+        // this.x += this.speedX;
+        // this.y += this.speedY;
+    }
 
     draw(){
         ctx.beginPath();
