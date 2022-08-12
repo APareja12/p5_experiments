@@ -9,15 +9,15 @@ canvas.height = window.innerHeight;
     
 ctx.beginPath();
 ctx.rect(100, 100, 100, 100);
-ctx.stroke();
+ctx.fill();
 // });
 
 // const degToRad = (deg) =>{
 //     return deg /180 * Math.PI;
 // }
 
-ctx.beginPath();
-ctx.arc(100, 100, 50, 100, degToRad(180));
-ctx.stroke();
+// ctx.beginPath();
+// ctx.arc(100, 100, 50, 100, degToRad(180));
+// ctx.stroke();
 
 
