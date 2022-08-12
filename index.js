@@ -23,7 +23,7 @@ canvas.height = window.innerHeight;
 let atoms = [];
 
 
-canvas.addEventListener('click', function(e){
+canvas.addEventListener('mousemove', function(e){
     for (let i = 0; i < 20; i++) {
        atoms.push(new Atom(e.x, e.y));
         // console.log("hello");
@@ -32,7 +32,7 @@ canvas.addEventListener('click', function(e){
 
 const animate = () => {
     atoms.forEach((atom, index) => {
-    // ctx.fillStyle = 'white'
+    ctx.fillStyle = 'white'
         atom.draw();
         atom.updateSpeed(); 
         atom.updateSize(); 
@@ -41,11 +41,10 @@ const animate = () => {
             atoms.splice(index, 1);
         }
 });
-    // ctx.save();
-    // ctx.fillStyle = 'rgba(255,255,255,0.3';
-    // ctx.fillStyle = 'rgba(0,0,0,0.2';
-    // ctx.fillRect(0,0,canvas.width, canvas.height);
-    // ctx.restore();
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,0,0,0.2';
+    ctx.fillRect(0,0,canvas.width, canvas.height);
+    ctx.restore();
     requestAnimationFrame(animate);
 }
 
