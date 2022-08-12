@@ -5,12 +5,12 @@ canvas.height = window.innerHeight;
 
 
 
-// canvas.addEventListener('click', function (e) {
+canvas.addEventListener('click', function (e) {
     
 ctx.beginPath();
-ctx.rect(100, 100, 100, 100);
+ctx.rect(e.x, e.y, 10, 10);
 ctx.fill();
-// });
+});
 
 // const degToRad = (deg) =>{
 //     return deg /180 * Math.PI;
