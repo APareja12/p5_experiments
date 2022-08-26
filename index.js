@@ -22,12 +22,12 @@ canvas.height = window.innerHeight;
 
 
 
-// canvas.addEventListener('mousemove', function(e){
-    //     for (let i = 0; i < 20; i++) {
-        //        atoms.push(new Atom(e.x, e.y));
-        //         // console.log("hello");
-        //     }
-        // });
+canvas.addEventListener('click', function(e){
+        for (let i = 0; i < 20; i++) {
+               atoms.push(new Atom(e.x, e.y));
+                // console.log("hello");
+            }
+        });
         
 let atoms = [];
 
@@ -43,7 +43,7 @@ const animate = () => {
         }
 });
     ctx.save();
-    ctx.fillStyle = 'rgba(0,0,0,0.2';
+    ctx.fillStyle = 'rgba(240,0,0,0.2';
     ctx.fillRect(0,0,canvas.width, canvas.height);
     ctx.restore();
     requestAnimationFrame(animate);
@@ -56,7 +56,7 @@ class Atom {
     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.radius = Math.random() * 8 + 2;
+        this.radius = Math.random() * 5 + 2;
         this.speedX = Math.random() * 4 - 2;
         this.speedY = Math.random() * 4 - 2;
     }
@@ -78,23 +78,23 @@ class Atom {
     }
 }
 
-const point = {
-    x: 0,
-    y: 0,
-}
+// const point = {
+//     x: 0,
+//     y: 0,
+// }
 
-let degree= 0;
-const generateAtoms = () => {
-    atoms.push(new Atom(canvas.width/2 +(point.x * 200), 
-    canvas.height/2 + (point.y * 200)));
-    point.x = Math.cos(degree / 180 * Math.PI);
-    point.y = point.x * point.x;
+// let degree= 0;
+// const generateAtoms = () => {
+//     atoms.push(new Atom(canvas.width/2 +(point.x * 200), 
+//     canvas.height/2 + (point.y * 200)));
+//     point.x = Math.cos(degree / 180 * Math.PI);
+//     point.y = point.x * point.x;
 
-    degree++;
-    requestAnimationFrame(generateAtoms);
-}
+//     degree++;
+//     requestAnimationFrame(generateAtoms);
+// }
 
-generateAtoms();
+// generateAtoms();
 
 // Math.random()* canvas.width, Math.random() * canvas.height
 
